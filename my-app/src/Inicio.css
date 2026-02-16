@@ -1,0 +1,289 @@
+.textoMovible {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.textoMovible:hover {
+    transform: translateX(8px);
+    color: #ff4d6d;
+}
+
+
+/* From Uiverse.io by joe-watson-sbf */
+.card {
+    width: 100%;
+    height: 254px;
+    border-radius: 4px;
+    background: #212121;
+    display: flex;
+    gap: 5px;
+    padding: .4em;
+}
+
+.card p {
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all .5s;
+    background: #212121;
+    border: 1px solid #ff5a91;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card p img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .5s;
+    border-radius: 100px;
+    opacity: 10%;
+}
+
+.card p:hover {
+    flex: 1;
+    opacity: 100%;
+}
+
+.card p span {
+    min-width: 14em;
+    padding: .5em;
+    text-align: center;
+    transform: rotate(-90deg);
+    transition: all .5s;
+    text-transform: uppercase;
+    color: #ff568e;
+    letter-spacing: .1em;
+}
+
+.card p:hover span {
+    transform: rotate(0);
+}
+
+.card p:hover img {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 100%;
+}
+
+.ContadorDias {
+    transition: transform 0.3s ease, color 0.3s ease;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.ContadorDias:hover {
+    transform: scale(1.1);
+    color: #ff4d6d;
+}
+
+.carta {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.letra {
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.letra:hover {
+    color: #ff4d6d;
+    text-shadow: 0 0 8px rgba(255, 77, 109, 0.6);
+    cursor: pointer;
+}
+
+.boton-spotify {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #21a33d;
+    border: none;
+    padding: 14px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.2s ease-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-spotify:hover {
+    transform: translateY(-5px);
+    background-color: #136623;
+}
+
+/* Contenedor oculto por defecto */
+.contenedor-spotify {
+    position: fixed;
+    top: 70px;
+    left: 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+/* Cuando está visible */
+.contenedor-spotify.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ********************************************************************** */
+/*Corazon de pixeles*/
+.heart {
+    position: absolute;
+    top: 10%;
+    opacity: 0.1;
+    display: inline-grid;
+    grid-template-columns: repeat(13, 20px);
+    grid-template-rows: repeat(11, 20px);
+    gap: 1px;
+    padding: 20px;
+    animation: heartbeat 2s infinite ease-in-out;
+}
+
+.pixel {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.pixel.pink {
+    background: #e63946;
+    animation: pinkPulse 2.5s infinite ease-in-out;
+}
+
+.pixel.soft-pink {
+    background: #f1a1b4;
+    animation: softPinkPulse 2.2s infinite ease-in-out;
+}
+
+.pixel.white {
+    background: #ffeaea;
+    animation: whitePulse 2.8s infinite ease-in-out;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+@keyframes pinkPulse {
+
+    0%,
+    100% {
+        background: #ff6b81;
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(230, 57, 70, 0);
+    }
+
+    50% {
+        background: #e63946;
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
+    }
+}
+
+@keyframes softPinkPulse {
+
+    0%,
+    100% {
+        background: #e63946;
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(241, 161, 180, 0);
+    }
+
+    50% {
+        background: #f1a1b4;
+        transform: scale(1.05);
+        box-shadow: 0 0 8px rgba(241, 161, 180, 0.6);
+    }
+}
+
+@keyframes whitePulse {
+
+    0%,
+    100% {
+        background: #ffe3e3;
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(255, 234, 234, 0);
+    }
+
+    50% {
+        background: #ffeaea;
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(255, 234, 234, 0.8);
+    }
+}
+
+.corazon-absoluto {
+    position: absolute;
+    animation: flotar 4s linear forwards;
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-200px) scale(1);
+        opacity: 0;
+    }
+}
+
+.contenedor-corazones-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* para que los clicks pasen */
+    overflow: hidden;
+    z-index: 0;
+    /* debajo de todo */
+}
+
+.corazon-absoluto {
+    position: absolute;
+    animation: flotar 8s linear infinite;
+}
+
+/* animación de flotación hacia arriba */
+@keyframes flotar {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: translateY(-300px) scale(1);
+        opacity: 0;
+    }
+}
